@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VideoSPatS: Video SPatiotemporal Splines for Disentangled Occlusion, Appearance and Motion Modeling and Editing">
+  <meta name="keywords" content="Video Implicit Representations">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VideoSPatS: Video SPatiotemporal Splines for Disentangled Occlusion, Appearance and Motion Modeling and Editing</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" sizes="192x192" href="icon.png" type="image/png"/> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+</head>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://davidcferman.github.io/FaceLift/">
+            FaceLift
+          </a>
+          <a class="navbar-item" href="">
+            NA
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">VideoSPatS: Video SPatiotemporal Splines for Disentangled Occlusion, Appearance and Motion Modeling and Editing</h1>
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Anonymous Authors</a><sup>1</sup>,</span>
+          </div> -->
+
+          <div class="author-block">
+            <p>
+                <strong>Juan Luis Gonzalez<sup>1</sup>, Xu Yao<sup>1</sup>, Alex Whelan<sup>1</sup>, 
+                Kyle Olszewski<sup>1</sup>, Hyeongwoo Kim<sup>2</sup>, Pablo Garrido<sup>1</sup></strong>
+            </p>
+            <p class="affiliation">
+                <sup>1</sup>Flawless AI &emsp; <sup>2</sup>Imperial College London
+            </p>
+            <p class="email">
+                <a href="mailto:juanluis.gonzalez@flawlessai.com">juanluis.gonzalez@flawlessai.com</a>, 
+                <!-- <a href="mailto:xu.yao@flawlessai.com">xu.yao@flawlessai.com</a>,  -->
+                <!-- <a href="mailto:kyle.olszewski@flawlessai.com">kyle.olszewski@flawlessai.com</a>,  -->
+                <a href="mailto:pablo.garrido@flawlessai.com">pablo.garrido@flawlessai.com</a> &emsp;
+                <!-- <a href="mailto:hyeongwoo.kim@imperial.ac.uk">hyeongwoo.kim@imperial.ac.uk</a> -->
+            </p>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">CVPR 2025</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://cvpr.thecvf.com/virtual/2025/poster/34725"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (coming soon)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (coming soon)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (to be released)</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/e164_video_9_site.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Fig. 1-a. Our VideoSPaTS implicit video representation. From left to right: Canonical Foreground, Canonical Background, Foreground, Background, Composited, GT (Ground Truth).
+      </h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/e164_edit_video_9_site.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/e164_edit_video_9_2.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Fig. 1-b. Our VideoSPaTS. From left to right: Edited canonical spaces, Propagated Foreground and Background, and Composited.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img id="arch" height="100%" src="./static/images/overall_model.png">
+      <h2 class="subtitle has-text-centered">
+        Fig. 2. Our Video SPatiotemporal Spline model, referred to as VideoSPatS, disentangles occlusions, motion, and appearance
+        into editable layers. Using independent branches for the regions of interest, it learns Neural Spline Fields (Sec. 3.1) separating the foreground
+        f (top) and background b (bottom) into editable, canonical representations. 
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present an implicit video representation for occlusions, appearance, and motion disentanglement from monocular videos, which we call Video SPatiotemporal Splines (VideoSPatS).
+            Unlike previous methods that map time and coordinates to deformation and canonical colors, our VideoSPatS maps input coordinates into Spatial and Color Spline deformation fields Ds and Dc, which disentangle motion and appearance in videos. With spline-based parametrization, our method naturally generates temporally consistent flow and guarantees long-term temporal consistency, which is crucial for convincing video editing.
+            Using multiple prediction branches, our VideoSPatS model also performs layer separation between the latent video and the selected occluder. 
+            By disentangling occlusions, appearance, and motion, our method enables better spatiotemporal modeling and editing of diverse videos, including in-the-wild talking head videos with challenging occlusions, shadows, and specularities while maintaining an appropriate canonical space for editing.
+            We also present general video modeling results on the DAVIS and CoDeF datasets, as well as our own talking head video dataset collected from open-source web videos. Extensive ablations show the combination of Ds and Dc under neural splines can overcome motion and appearance ambiguities, paving the way for more advanced video editing models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <h3 class="title has-text-centered">
+      Results
+    </h3>
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        Editing with Time-Dependent Appearance
+      </h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/e59_edit_video_blackswan.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Original Learned Video Implicit Representation
+      </h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/e119_edit_video_blackswan_white_swan.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/e119_edit_video_blackswan_glowswan.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/e119_edit_video_blackswan_crystal.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Fig. 3. Our VideoSPaTS. From left to right: Propagated edited Foreground, Edited Foreground canonical space, Background Canonical Space, Background, Composited. Time dependent appearance is preserved after editing.
+      </h2>
+    </div>
+  </div>
+
+  <div class="container is-max-desktop">
+    <div class="hero-body"></div>
+      <h2 class="subtitle has-text-centered">
+        Video Reconstruction Results
+      </h2>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/comp_C6VbIdO42mQ_recons.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/comp_LKJLXbiOvBg_recons.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/comp_MXYLgFEcagg_recons.mp4"
+                type="video/mp4">
+      </video>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/comp_Yu5Xu2qwZxo_recons.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Fig. 4. Reconstruction results, from left to right: GT, Layered Atlases, Deformable Sprites, CoDeF, and our VideoSPatS.
+      </h2>
+      <br/>
+      <br/>
+    </div>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/e101_video_0_batman.mp4"
+                    type="video/mp4">
+          </video>
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/e101_edit_video_0_batman.mp4"
+                    type="video/mp4">
+          </video>
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/e120_video_3_v.mp4"
+                    type="video/mp4">
+          </video>
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/e120_edit_video_3_v.mp4"
+                    type="video/mp4">
+          </video>
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/e83_video_1_stranger.mp4"
+                    type="video/mp4">
+          </video>
+          <video id="teaser" autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/e83_edit_video_1_stranger.mp4"
+                    type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Fig. 5. Reconstructions and editing results by our VideoSPaTS on the CoDeF datasets with our temporally varying appearance (<b>see third column</b>). Reconstruction samples, from left to right: Canonical Foreground, Canonical Background, Foreground, Background, Composited, GT. Editing samples, from left to right: Edited canonical spaces, Propagated Foreground and Background, and Composited
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          Editing Results
+        </h2>
+        <div class="columns is-centered">
+          <div class="row" style="display: flex; margin-bottom: 2%">
+            <div class="col-md-4" style="width: 33%;">
+                <video class="video" id="codef" loop playsinline autoplay muted src="./static/videos/frames_dCG0bqeVvfE_A_50_base_transformed.mp4" onplay="resizeAndPlay(this)" ></video>
+            </div>
+            <div class="col-md-4" style="width: 33%;">
+              <video class="video" id="codef" loop playsinline autoplay muted src="./static/videos/e134_edit_video_8_doll.mp4" onplay="resizeAndPlay(this)" ></video>
+          </div>
+            <div class="col-md-4" style="width: 33%;">
+                <video class="video" id="reference" loop playsinline autoplay muted src="./static/videos/frames_dCG0bqeVvfE_A_50_base_transformed_raw.mp4" onplay="resizeAndPlay(this)" ></video>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="row" style="display: flex; margin-bottom: 2%">
+            <div class="col-md-4" style="width: 33%;">
+                <video class="video" id="codef" loop playsinline autoplay muted src="./static/videos/beauty_1_base_transformed.mp4" onplay="resizeAndPlay(this)" ></video>
+            </div>
+            <div class="col-md-4" style="width: 33%; margin-left: 15%">
+              <video class="video" id="codef" loop playsinline autoplay muted src="./static/videos/e351_edit_video_4_beauty.mp4" onplay="resizeAndPlay(this)" ></video>
+          </div>
+            <div class="col-md-4" style="width: 33%; margin-left: 15%">
+                <video class="video" id="reference" loop playsinline autoplay muted src="./static/videos/beauty_1_base_transformed_raw.mp4" onplay="resizeAndPlay(this)" ></video>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="row" style="display: flex; margin-bottom: 1%">
+            <div class="col-md-4" style="width: 33%;">
+                <video class="video" id="codef" loop playsinline autoplay muted src="./static/videos/9kOyPfVh3Ew_40_base_transformed.mp4" onplay="resizeAndPlay(this)" ></video>
+            </div>
+            <div class="col-md-4" style="width: 33%;">
+              <video class="video" id="codef" loop playsinline autoplay muted src="./static/videos/e164_edit_video_9_makeclown.mp4" onplay="resizeAndPlay(this)" ></video>
+          </div>
+            <div class="col-md-4" style="width: 33%;">
+                <video class="video" id="reference" loop playsinline autoplay muted src="./static/videos/9kOyPfVh3Ew_40_base_transformed_raw.mp4" onplay="resizeAndPlay(this)" ></video>
+            </div>
+          </div>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          Fig. 6. From left to right, CoDeF, Our VideoSPaTS, and the reference video.
+        </h2>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          Motion Editing Results.
+        </h2>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_8_half.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_8_15.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_8_y1.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_8_yx.mp4"
+                  type="video/mp4">
+        </video>
+        <!-- <h2 class="subtitle has-text-centered">
+          Fig. 7. From left to right: Foreground Canonical, Background Canonical, Edited Foreground, Background, Composited, Reference. By modifying the precomputed control points, we can smoothly perform motion editing. Thanks to our spline deformation fields, instead of rendering frames where the foreground is instantly `teleporting' to the offset location, our motion edited videos are smoothly rendered without discontinuities.
+        </h2> -->
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          Motion Editing Results (cont.).
+        </h2>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_8_half.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_8_15.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_8_y1.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_8_yx.mp4"
+                  type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Fig. 7. From left to right: Foreground Canonical, Background Canonical, Edited Foreground, Background, Composited, Reference. By modifying the precomputed control points, we can smoothly perform motion editing. Thanks to our spline deformation fields, instead of rendering frames where the foreground is instantly `teleporting' to the offset location, our motion edited videos are smoothly rendered without discontinuities.
+        </h2>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          Long Video Reconstructions
+        </h2>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_11_long.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_1_long.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e27_video_8_long.mp4"
+                  type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Fig. 8. Results on longer video sequences (10s - 240 frames).
+        </h2>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          Failure Cases
+        </h2>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e134_video_3_fail.mp4"
+                  type="video/mp4">
+        </video>
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/e134_video_10_fail.mp4"
+                  type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Fig. 9. Failure cases. Top row: the dynamic region in background image (face region) is too small. Bottom row: too large foreground motion and self-occlusion (opposite sides of brush) cause a double brush to appear in the foreground canonical space.
+        </h2>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @misc{,
+      }</code></pre>
+  </div>
+</section> -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We thank the authors of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> that kindly
+            open sourced their website template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
